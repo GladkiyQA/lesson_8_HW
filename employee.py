@@ -40,3 +40,27 @@ class Employee:
         headers = {'x-client-token': self.get_token()}
         response = requests.patch(f'{self.my_url}/employee/{id}', json=data, headers=headers)
         return response
+
+    def create_employee_data(self, first_name, last_name, middle_name, phone, email, birthdate, avatar_url, company_id):
+        return {
+            "isActive": True,
+            "createDateTime": "2024-02-20T20:42:58.623Z",
+            "lastChangedDateTime": "2024-02-20T20:42:58.623Z",
+            "firstName": first_name,
+            "lastName": last_name,
+            "middleName": middle_name,
+            "phone": phone,
+            "email": email,
+            "birthdate": birthdate,
+            "avatar_url": avatar_url,
+            "companyId": company_id
+        }
+
+    def create_update_data(self, last_name, email, url, phone, is_active):
+        return {
+            "lastName": last_name,
+            "email": email,
+            "url": url,
+            "phone": phone,
+            "isActive": is_active
+        }
